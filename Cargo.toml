@@ -9,16 +9,38 @@ license = "MIT OR Apache-2.0"
 keywords = ["experimental", "quantity", "unit"]
 categories = ["no-std", "science"]
 
+[dependencies]
+
+zahl = { git = "https://github.com/matthieu-m/zahl.git", rev = "03ca640590c4e3fa637968f551adaaf2f29e7dd9" }
+
+
 [features]
 
-default = ["power-6"]
+default = ["power-6", "system-si"]
 
-#   Allows compile-time exponents in the range -6..6.
-#   If deactivated, compile-time exponents are limited to -3..3.
-power-6 = []
+#   Enables the use of the `alloc` crate, and notably the `String` type.
+alloc = []
 
-#   Allows compile-time exponents in the range -9..9.
-power-9 = ["power-6"]
+#   The system-S feature enables the relevant system of quantities & units.
+#
+#   For example system-si enables the SI system, which can be found at `crate::system::si`.
+system-si = []
 
-#   Allows compile-time exponents in the range -12..12.
-power-12 = ["power-9"]
+#   The power-N feature enables compile-time arithmetic in the range -N..N.
+
+power-3 = ["zahl/add-3", "zahl/neg-3", "zahl/sub-3", "zahl/mul-3", "zahl/div-3", "zahl/div-or-3", "zahl/root-3", "zahl/root-or-3"]
+power-6 = ["zahl/add-6", "zahl/neg-6", "zahl/sub-6", "zahl/mul-6", "zahl/div-6", "zahl/div-or-6", "zahl/root-6", "zahl/root-or-6"]
+power-9 = ["zahl/add-9", "zahl/neg-9", "zahl/sub-9", "zahl/mul-9", "zahl/div-9", "zahl/div-or-9", "zahl/root-9", "zahl/root-or-9"]
+power-12 = ["zahl/add-12", "zahl/neg-12", "zahl/sub-12", "zahl/mul-12", "zahl/div-12", "zahl/div-or-12", "zahl/root-12", "zahl/root-or-12"]
+power-15 = ["zahl/add-15", "zahl/neg-15", "zahl/sub-15", "zahl/mul-15", "zahl/div-15", "zahl/div-or-15", "zahl/root-15", "zahl/root-or-15"]
+power-18 = ["zahl/add-18", "zahl/neg-18", "zahl/sub-18", "zahl/mul-18", "zahl/div-18", "zahl/div-or-18", "zahl/root-18", "zahl/root-or-18"]
+power-21 = ["zahl/add-21", "zahl/neg-21", "zahl/sub-21", "zahl/mul-21", "zahl/div-21", "zahl/div-or-21", "zahl/root-21", "zahl/root-or-21"]
+power-24 = ["zahl/add-24", "zahl/neg-24", "zahl/sub-24", "zahl/mul-24", "zahl/div-24", "zahl/div-or-24", "zahl/root-24", "zahl/root-or-24"]
+power-27 = ["zahl/add-27", "zahl/neg-27", "zahl/sub-27", "zahl/mul-27", "zahl/div-27", "zahl/div-or-27", "zahl/root-27", "zahl/root-or-27"]
+power-30 = ["zahl/add-30", "zahl/neg-30", "zahl/sub-30", "zahl/mul-30", "zahl/div-30", "zahl/div-or-30", "zahl/root-30", "zahl/root-or-30"]
+power-33 = ["zahl/add-33", "zahl/neg-33", "zahl/sub-33", "zahl/mul-33", "zahl/div-33", "zahl/div-or-33", "zahl/root-33", "zahl/root-or-33"]
+power-36 = ["zahl/add-36", "zahl/neg-36", "zahl/sub-36", "zahl/mul-36", "zahl/div-36", "zahl/div-or-36", "zahl/root-36", "zahl/root-or-36"]
+power-39 = ["zahl/add-39", "zahl/neg-39", "zahl/sub-39", "zahl/mul-39", "zahl/div-39", "zahl/div-or-39", "zahl/root-39", "zahl/root-or-39"]
+power-42 = ["zahl/add-42", "zahl/neg-42", "zahl/sub-42", "zahl/mul-42", "zahl/div-42", "zahl/div-or-42", "zahl/root-42", "zahl/root-or-42"]
+power-45 = ["zahl/add-45", "zahl/neg-45", "zahl/sub-45", "zahl/mul-45", "zahl/div-45", "zahl/div-or-45", "zahl/root-45", "zahl/root-or-45"]
+power-48 = ["zahl/add-48", "zahl/neg-48", "zahl/sub-48", "zahl/mul-48", "zahl/div-48", "zahl/div-or-48", "zahl/root-48", "zahl/root-or-48"]

@@ -1,3 +1,10 @@
 //! A library of quantities and units.
 
-#![no_std]
+#![cfg_attr(not(test), no_std)]
+
+#[cfg(feature = "alloc")]
+extern crate alloc;
+
+pub mod api;
+pub mod kit;
+pub mod system;
