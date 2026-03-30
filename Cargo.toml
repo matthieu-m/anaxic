@@ -1,0 +1,24 @@
+[package]
+name = "anaxic"
+version = "0.1.0"
+authors = ["Matthieu M. <matthieum.147192@gmail.com>"]
+edition = "2024"
+description = "Practical yet flexible quantities & units"
+repository = "https://github.com/matthieu-m/anaxic"
+license = "MIT OR Apache-2.0"
+keywords = ["experimental", "quantity", "unit"]
+categories = ["no-std", "science"]
+
+[features]
+
+default = ["power-6"]
+
+#   Allows compile-time exponents in the range -6..6.
+#   If deactivated, compile-time exponents are limited to -3..3.
+power-6 = []
+
+#   Allows compile-time exponents in the range -9..9.
+power-9 = ["power-6"]
+
+#   Allows compile-time exponents in the range -12..12.
+power-12 = ["power-9"]
